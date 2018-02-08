@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Advantech-IIoT/node-atETP"
+    "url": "https://github.com/Advantech-IIoT/node-red-contrib-atetp"
   },
   "author": "Dylan.Huang",
   "license": "Apache-2.0"
