@@ -2,7 +2,7 @@
 A collection of [Node-RED](http://nodered.org) nodes for Advantech IIoT electronic typeplate function.
 
 Notice that an Advantech IIoT Platform SDK have to be installed to make this node works correctly.
-Advantech IIoT Platform SDK download link is shown below:
+Advantech IIoT Platform SDK download link is shown here:  
 https://github.com/Advantech-IIoT/Platform-SDK/tree/master/bin
 
 ## Installation
@@ -24,7 +24,7 @@ ETP Node-RED node provide four functions in this package.
 
 ### Example
 Please refer to [demo.json](./demo.json).  
-![demoflow](./demoflow.jpg)  
+![demoflow](./demoflow.JPG)  
  - Input anything to `Read ETP data` node for triggering it to print all ETP data to msg node and be shown on the right side.
  - Input `label` and `text` attributes to `Write ETP data` node to write `text` to the specified `label`.
  - Input `address` attribute to `Check lock status` node to get the lock status of this area.
