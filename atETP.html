@@ -1,0 +1,207 @@
+<!--
+  Copyright JS Foundation and other contributors, http://js.foundation
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<script type="text/x-red" data-template-name="ETP data read">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]common.label.name">
+    </div>
+    <br/>
+</script>
+
+<script type="text/x-red" data-help-name="ETP data read">
+    <p>Read the ETP values of device.</p>
+	<p>There are 8 elements to show:</p>
+	<p>1.Device Order Text</p>
+	<p>2.Device Order Number</p>
+	<p>3.Device Index</p>
+	<p>4.Device Serial Number</p>
+	<p>5.Operating System</p>
+	<p>6.Image</p>
+	<p>7.User Info. 1</p>
+	<p>8.User Info. 2</p>
+	<br/>
+	<p><b>Input:</b></p>
+    <p>This node doesn't need any input.</p>
+	<br />
+    <p><b>Output:</b></p>
+    <p><code>msg.payload[0]</code>: Device Order Text</p>
+    <p><code>msg.payload[1]</code>: Device Order Number</p>
+    <p><code>msg.payload[2]</code>: Device Index</p>
+    <p><code>msg.payload[3]</code>: Device Serial Number</p>
+    <p><code>msg.payload[4]</code>: Operating System</p>
+    <p><code>msg.payload[5]</code>: Image</p>
+    <p><code>msg.payload[6]</code>: User Info. 1</p>
+    <p><code>msg.payload[7]</code>: User Info. 2</p>
+    <br />
+	<br/>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ETP data read',{
+        category: 'Advantech_IIoT', 
+        color:"darksalmon",
+        defaults: {
+          name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        
+        icon: "arrow-in.png",
+        align: "right",
+        label: function() {
+            return this.name||"IIoT-ETP_Data_Read";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ETP data write">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]common.label.name">
+    </div>
+    <br/>
+</script>
+
+<script type="text/x-red" data-help-name="ETP data write">
+   <p>Write the ETP values in device user area.</p>
+   <p>There are 2 options to select:</p>
+	<p>1.User Info. 1</p>
+	<p>2.User Info. 2</p>
+	<br/>
+	<p><b>Input:</b></p>
+    <p>There are 2 input have to set.</p>
+    <p><code>msg.payload.label : </code></p>
+	<p>If you want to write User Info. 1, set this value as 7.</p>
+	<p>If you want to write User Info. 2, set this value as 8.</p>
+    <p><code>msg.payload.text : </code></p>
+	<p>The information you want to insert.</p>
+    <br />
+	<p><b>Output:</b></p>
+    <p>This node doesn't have any output.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ETP data write',{
+        category: 'Advantech_IIoT', 
+        color:"darksalmon",
+        defaults: {
+          name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        
+        icon: "arrow-in.png",
+        align: "right",
+        label: function() {
+            return this.name||"IIoT-ETP_Data_Write";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ETP lock unlock set">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]common.label.name">
+    </div>
+    <br/>
+</script>
+
+<script type="text/x-red" data-help-name="ETP lock unlock set">
+	<p>Lock/unlock the ETP user area.</p>
+	<p>There are 2 Status :</p>
+	<p>1.Lock</p>
+	<p>2.Unlock</p>
+	<p>You should give address and password as input.</p>
+	<br/>
+	<p><b>Input:</b></p>
+	<p>The user area address is 0xA6.</p>
+	<p>So we must set the <code>msg.payload.address=0xA6</code> and <code>msg.payload.password</code> to lock/unlock device user area.</p>
+    <p><b>Output:</b></p>
+    <p>This node doesn't have any output.</p>
+	<br/>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ETP lock unlock set',{
+        category: 'Advantech_IIoT', 
+        color:"darksalmon",
+        defaults: {
+          name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        
+        icon: "arrow-in.png",
+        align: "right",
+        label: function() {
+            return this.name||"IIoT-ETP_Lock_Unlock_Set";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ETP Lock Status Check">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]common.label.name">
+    </div>
+    <br/>
+</script>
+
+<script type="text/x-red" data-help-name="ETP Lock Status Check">
+	<p>Get the ETP user area lock status.</p>
+	<p>There are 2 Status :</p>
+	<p>1.Lock</p>
+	<p>2.Unlock</p>
+	<p>You should to give address as input and the output will tell you it is lock or unlock.</p>
+	<br/>
+	<p><b>Input:</b></p>
+	<p>The user area address is 0xA6.</p>
+	<p>So we must set the <code>msg.payload.address=0xA6</code> to detect lock status.</p>
+    <p><b>Output:</b></p>
+    <p><code>msg.payload</code>: lock status of user area.</p>
+	<br/>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ETP Lock Status Check',{
+        category: 'Advantech_IIoT', 
+        color:"darksalmon",
+        defaults: {
+          name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        
+        icon: "arrow-in.png",
+        align: "right",
+        label: function() {
+            return this.name||"IIoT-ETP_Lock_Status_Check";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
