@@ -2,8 +2,11 @@
 A collection of [Node-RED](http://nodered.org) nodes for Advantech IIoT electronic typeplate function.
 
 Notice that an Advantech IIoT Platform SDK have to be installed to make this node works correctly.
-Advantech IIoT Platform SDK download link is shown here:  
-https://github.com/Advantech-IIoT/Platform-SDK/tree/master/bin
+Advantech IIoT Platform SDK download link is shown below:
+Windows:
+  https://github.com/Advantech-IIoT/Platform-SDK/tree/master/windows/bin
+Linux:
+  https://github.com/Advantech-IIoT/Platform-SDK/tree/master/linux/bin
 
 ## Installation
 Use npm command to install this package locally in the Node-RED modules directory
@@ -31,10 +34,11 @@ Please refer to [demo.json](./demo.json).
  - Input `address` and `password` attributes to `Toggle lock status` node to toggle lock status and print the result to msg node.
 
 ## Test Platform
- - Windows 10 Enterprise LTSB with node.js 6.10.1
+ - Windows 10 Enterprise LTSC with node.js 18.14.1
 
 ## History
+ - 3.0.1 - June 2023 : update bundleDependencies
  - 1.0.5 - October 2017 : Initial Release
 
 ## License
-Copyright 2017 ADVANTECH Corp. under [the Apache 2.0 license](LICENSE).
+Copyright 2023 ADVANTECH Corp. under [the Apache 2.0 license](LICENSE).
